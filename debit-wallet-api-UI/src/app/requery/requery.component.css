@@ -1,0 +1,25 @@
+/* Add this CSS to your component's CSS file or your global styles (styles.css) */
+
+.center-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height for your layout */
+}
+
+.card {
+  width: 24rem;
+  margin-top: 2rem;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}

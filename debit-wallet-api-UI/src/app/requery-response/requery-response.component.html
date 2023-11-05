@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Requery Response</h2>
+          <table class="table table-bordered">
+            <tr>
+              <th>Payment Reference:</th>
+              <td>{{ responseData.paymentRef }}</td>
+            </tr>
+            <tr>
+              <th>Transaction Reference:</th>
+              <td>{{ responseData.transactionReference }}</td>
+            </tr>
+            <tr>
+              <th>Response Code:</th>
+              <td>{{ responseData.responseCode }}</td>
+            </tr>
+            <tr>
+              <th>Response Message:</th>
+              <td>{{ responseData.responseMessage }}</td>
+            </tr>
+            <tr>
+              <th>Amount:</th>
+              <td>{{ responseData.amount }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

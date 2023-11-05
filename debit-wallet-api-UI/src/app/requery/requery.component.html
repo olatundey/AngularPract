@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Requery Transaction</h2>
+          <form (ngSubmit)="onSubmit()" #apiForm="ngForm">
+            <div class="form-group">
+              <label for="transactionRef">Transaction Reference:</label>
+              <input type="text" id="transactionRef" name="transactionRef" [(ngModel)]="requestData.transactionRef" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="paymentRef">Payment Reference:</label>
+              <input type="text" id="paymentRef" name="paymentRef" [(ngModel)]="requestData.paymentRef" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="accountNo">Account Number:</label>
+              <input type="text" id="accountNo" name="accountNo" [(ngModel)]="requestData.accountNo" class="form-control">
+            </div>
+            <!-- <button class="btn btn-primary btn-block" type="submit" [disabled]="apiForm.invalid">Send Request</button> -->
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="!(requestData.accountNo && (requestData.transactionRef || requestData.paymentRef))">Send Request</button>
+          </form>
+        </div>
+        <!-- <div *ngIf="apiResponse" class="card-footer">
+          <h3 class="text-center">API Response</h3>
+          <pre class="text-center">{{ apiResponse | json }}</pre>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

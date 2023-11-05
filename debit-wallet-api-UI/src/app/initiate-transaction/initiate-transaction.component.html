@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Initiate Transaction</h2>
+          <form (ngSubmit)="initiateTransaction()" #transactionForm="ngForm">
+            <div class="form-group">
+              <label for="merchantName">Merchant Name:</label>
+              <input type="text" id="merchantName" name="merchantName" [(ngModel)]="requestData.merchantName" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="customerName">Customer Name:</label>
+              <input type="text" id="customerName" name="customerName" [(ngModel)]="requestData.customerName" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="accountNo">Account Number:</label>
+              <input type="text" id="accountNo" name="accountNo" [(ngModel)]="requestData.accountNo" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="phoneNo">Phone Number:</label>
+              <input type="text" id="phoneNo" name="phoneNo" [(ngModel)]="requestData.phoneNo" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="emailAddress">Email Address:</label>
+              <input type="email" id="emailAddress" name="emailAddress" [(ngModel)]="requestData.emailAddress" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address" [(ngModel)]="requestData.address" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="transactionReference">Transaction Reference:</label>
+              <input type="text" id="transactionReference" name="transactionReference" [(ngModel)]="requestData.transactionReference" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount:</label>
+              <input type="number" id="amount" name="amount" [(ngModel)]="requestData.amount" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="narration">Narration:</label>
+              <input type="text" id="narration" name="narration" [(ngModel)]="requestData.narration" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="billingCode">Billing Code:</label>
+              <input type="text" id="billingCode" name="billingCode" [(ngModel)]="requestData.billingCode" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="productCode">Product Code:</label>
+              <input type="text" id="productCode" name="productCode" [(ngModel)]="requestData.productCode" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="transactionDate">Transaction Date:</label>
+              <input type="datetime-local" id="transactionDate" name="transactionDate" [(ngModel)]="requestData.transactionDate" required class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="responseUrl">Response URL:</label>
+              <input type="url" id="responseUrl" name="responseUrl" [(ngModel)]="requestData.responseUrl" required class="form-control">
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="transactionForm.invalid">Initiate Transaction</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

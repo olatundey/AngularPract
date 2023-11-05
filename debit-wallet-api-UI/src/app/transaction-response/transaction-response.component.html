@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Debit Response</h2>
+          <table class="table table-bordered">
+            <ng-container *ngIf="response">
+              <tr>
+                <th>Payment Reference:</th>
+                <td>{{ response.paymentRef }}</td>
+              </tr>
+              <tr>
+                <th>Response Code:</th>
+                <td>{{ response.responseCode }}</td>
+              </tr>
+              <tr>
+                <th>Response Message:</th>
+                <td>{{ response.responseMessage }}</td>
+              </tr>
+              <tr>
+                <th>Amount:</th>
+                <td>{{ response.amount }}</td>
+              </tr>
+              <tr>
+                <th>Account Number:</th>
+                <td>{{ response.accountNo }}</td>
+              </tr>
+              <tr>
+                <th>Hash Key:</th>
+                <td>{{ response.hashKey }}</td>
+              </tr>
+              <tr>
+                <th>Hash Key Response:</th>
+                <td>{{ response.hashKeyResponse }}</td>
+              </tr>
+            </ng-container>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

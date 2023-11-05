@@ -1,0 +1,53 @@
+/* Add this CSS to your component's CSS file or your global styles (styles.css) */
+
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height for your layout */
+  }
+  
+  .card {
+    width: 38rem;
+    margin-top: 2rem;
+  }
+  
+  .card-title {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+
+  /* Custom CSS for bordered table */
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: left;
+  }
+
+  /* Define table header background and text color */
+  .table-bordered th {
+    background-color: #343a40; /* Background color for header */
+    color: #ffffff; /* Text color for header */
+  }
+
+  /* Define alternating row background colors */
+  .table-bordered tr:nth-child(even) {
+    background-color: #f8f9fa; /* Background color for even rows */
+  }
+
+  .table-bordered tr:nth-child(odd) {
+    background-color: #ffffff; /* Background color for odd rows */
+  }

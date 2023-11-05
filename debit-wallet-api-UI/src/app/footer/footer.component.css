@@ -1,0 +1,47 @@
+/* Footer Styles */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh; /* Minimum height of the viewport */
+    /* min-height: 100vh; */
+  }
+  
+  footer {
+    background-color: #1976d2; /* Background color similar to the header */
+    position: fixed;
+    bottom: 0; /* Stick the footer to the bottom of the viewport */
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+  
+    footer a {
+      display: flex;
+      align-items: center;
+    }
+  
+    .github-star-badge {
+      color: #24292e;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      padding: 3px 10px;
+      border: 1px solid rgba(27,31,35,.2);
+      border-radius: 3px;
+      background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+      margin-left: 4px;
+      font-weight: 600;
+    }
+  
+svg#clouds {
+    /* The clouds SVG remains the same */
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }

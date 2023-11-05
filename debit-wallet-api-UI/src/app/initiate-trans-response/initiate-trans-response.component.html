@@ -1,0 +1,115 @@
+<!-- <div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Initiate Transaction Response</h2>
+          <table class="table table-bordered">
+            <tr *ngIf="responseData">
+              <th>Response Code:</th>
+              <td>{{ responseData.responseCode }}</td>
+            </tr>
+            <tr *ngIf="responseData">
+              <th>Response Message:</th>
+              <td>{{ responseData.responseMessage }}</td>
+            </tr>
+            <tr *ngIf="responseData">
+              <th>Transaction Reference:</th>
+              <td>{{ responseData.transactionReference }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Complete Transaction</h2>
+          <form (ngSubmit)="completeTransaction()" #completeTransactionForm="ngForm">
+            <div class="form-group">
+              <label for="otp">OTP:</label>
+              <input type="text" id="otp" name="otp" [(ngModel)]="requestData.otp" required>
+            </div>
+            <div class="form-group">
+              <label for="transactionRef">Transaction Reference:</label>
+              <input type="text" id="transactionRef" name="transactionRef" [(ngModel)]="requestData.transactionRef" required>
+            </div>
+            <!-- <div class="form-group">
+              <label for="transactionRef">Transaction Reference:</label>
+              <input type="text" id="transactionRef" name="transactionRef" [value]="requestData.transactionRef" readonly>
+            </div> -->
+            
+            <!-- <div class="form-group">
+              <label for="transactionRef">Transaction Reference:</label>
+              <input type="text" id="transactionRef" name="transactionRef" [value]="requestData.transactionRef" readonly hidden>
+            </div> -->
+            <button type="submit" [disabled]="completeTransactionForm.invalid">Complete Transaction</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div *ngIf="response">
+  <h3>CompleteTransaction Response</h3>
+  <pre>{{ response | json }}</pre>
+</div> -->
+
+<ng-container *ngIf="response">
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <!-- <h2 class="card-title text-center">Debit Response</h2> -->
+          <table class="table table-bordered">
+            <h2>Debit Response</h2>
+            <!-- <ng-container *ngIf="response"> -->
+              <tr>
+                <th>Payment Reference:</th>
+                <td>{{ response.paymentRef }}</td>
+              </tr>
+              <tr>
+                <th>Response Code:</th>
+                <td>{{ response.responseCode }}</td>
+              </tr>
+              <tr>
+                <th>Response Message:</th>
+                <td>{{ response.responseMessage }}</td>
+              </tr>
+              <tr>
+                <th>Amount:</th>
+                <td>{{ response.amount }}</td>
+              </tr>
+              <tr>
+                <th>Account Number:</th>
+                <td>{{ response.accountNo }}</td>
+              </tr>
+              <tr>
+                <th>Hash Key:</th>
+                <td>{{ response.hashKey }}</td>
+              </tr>
+              <tr>
+                <th>Hash Key Response:</th>
+                <td>{{ response.hashKeyResponse }}</td>
+              </tr>
+            <!-- </ng-container> -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-container>
+
+
+
+
+

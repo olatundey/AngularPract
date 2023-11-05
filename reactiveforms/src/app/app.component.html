@@ -1,0 +1,105 @@
+<div class="container-fluid d-flex justify-content-center">
+  <div class="card mt-5" style="width: 24rem;">
+    <div class="card-body">
+      <h2 class="card-title text-center">Registration Form</h2>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          
+          <!-- <small class="text-danger" *ngIf="userName?.invalid && userName?.touched">
+            Username is required
+          </small> -->
+          <div class="form-group">
+            <label for="userName">Username</label>
+            <input formControlName="userName" type="text" class="form-control">
+            <div *ngIf="userName?.invalid && userName?.touched"> 
+              <small *ngIf="userName?.errors?.['required']" class="text-danger" >
+              Username is required
+            </small>
+           
+            <small *ngIf="userName?.errors?.['minlength']" class="text-danger">
+              Username must be at least 3 characters long
+            </small>
+            <small *ngIf="userName?.errors?.['forbiddenName']" class="text-danger">
+              Username: "{{ userName?.errors?.['forbiddenName']?.value }}" not allowed
+            </small>
+            
+          </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <button type="button" class="btn btn-secondary btn-sm m-2" 
+          (click)="addAlternateEmail()">Add email</button>
+          <input formControlName="email" type="email" class="form-control">
+          <small *ngIf="email?.invalid && email?.touched" class="text-danger">
+            Email is required
+          </small>
+          <div formArrayName="alternateEmails" *ngFor="let email of alternateEmails.controls; let i=index">
+            <input type="text" class="form-control my-1" [formControlName]="i">
+          </div>
+        </div>
+        
+        
+        <div class="form-check">
+          <input formControlName="subscribe" type="checkbox" class="form-check-input">
+          <label class="form-check-label" for="subscribe">Subscribe to Promotional Offers</label>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input formControlName="password" type="password" class="form-control">
+          <small class="text-danger" *ngIf="registrationForm?.get('password')?.invalid && registrationForm?.get('password')?.touched">
+            Password is required
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input formControlName="confirmPassword" type="password" class="form-control">
+          <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched">
+            <small *ngIf="confirmPassword?.errors?.['required']" class="text-danger">
+              Please confirm your password
+            </small>
+            <small *ngIf="registrationForm?.errors?.['mismatch']" class="text-danger">
+              Password does not match
+            </small>
+          </div>
+        </div>
+        
+
+        <div formGroupName="address">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input formControlName="city" type="text" class="form-control">
+            <small class="text-danger" *ngIf="registrationForm?.get('address.city')?.invalid && registrationForm?.get('address.city')?.touched">
+              City is required
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="state">State</label>
+            <input formControlName="state" type="text" class="form-control">
+            <small class="text-danger" *ngIf="registrationForm?.get('address.state')?.invalid && registrationForm?.get('address.state')?.touched">
+              State is required
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="postalCode">Postal Code</label>
+            <input formControlName="postalCode" type="text" class="form-control">
+            <small class="text-danger" *ngIf="registrationForm?.get('address.postalCode')?.invalid && registrationForm?.get('address.postalCode')?.touched">
+              Postal Code is required
+            </small>
+          </div>
+        </div>
+        <div class="text-center d-flex justify-content-between">
+          <button [disabled]='!registrationForm.valid' class="btn btn-primary mt-4" type="submit">Register</button>
+
+          <button (click)="loadAPIData()" class="btn btn-secondary ml-2 mt-4" type="button">Load API Data</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
